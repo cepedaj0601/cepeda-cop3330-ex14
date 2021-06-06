@@ -40,6 +40,22 @@ public class App {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        
+        System.out.println("What is the order amount?");
+        double amount = in.nextDouble();
+
+        System.out.println("What is the state?");
+        String state = in.next();
+
+        double taxWI = 0.055;
+        double total = amount * (1 + taxWI);
+
+        if (state.equals("WI")) {
+            System.out.printf("The subtotal is: $%.2f.\n" +
+                    "The tax is: $%.2f.\n" +
+                    "The total is: $%.2f.", amount, (amount * taxWI), total);
+        }
+        else{
+            System.out.printf("The total is $%.2f", amount);
+        }
     }
 }
